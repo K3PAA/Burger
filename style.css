@@ -18,6 +18,7 @@ body{
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
     color: #6c757d;
+    overflow-x: hidden;
 }
 header{
     padding: 1rem 0;
@@ -31,9 +32,6 @@ img{
 /*----------------
 -------Typography-------
 ------------------*/
-
-
-
 h1{
     font-size: 1.75rem;
 }
@@ -47,6 +45,9 @@ h2{
     font-weight: 600;
     transition: all 0.4s ease;
     margin-left: 10px;
+}
+.section-paragraph p{
+    font-size: 1.45rem;
 }
 p{
     font-size: 1.15rem;
@@ -68,6 +69,7 @@ section h1{
     font-family: 'Square Peg', cursive;
     font-size: 4rem;
     color: #0077b6;
+    text-align: center;
 }
 .menu-h1{
     text-align: center;
@@ -105,6 +107,9 @@ nav li{
     margin-right: 2em;
     font-size: 1.4rem;
 }
+nav li:last-child{
+    margin: 0;
+}
 nav a{
     text-decoration: none;
     color: #6c757d;
@@ -116,6 +121,16 @@ nav a:hover,
 nav a:focus{
     text-decoration: underline;
     color: #4895ef;
+}
+@media (max-width: 1140px){
+    .container-flex{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    nav li{
+        margin-right: 1em;
+    }
 }
 /*----------------
 -------Section one-------
@@ -132,32 +147,27 @@ nav a:focus{
     justify-content: center;
     align-items: center;
 }
-.mainImage{
-    display: block;
-    max-height: 550px;
-     object-fit: cover;
-     object-position: left; 
-    grid-area: first;
-    border-radius: 15px;
-    cursor: pointer;
-    position: relative;
-}
-.smallImage{
-    display: block;
-    object-fit: cover; 
-    border-radius: 15px;
-    max-height: 270px;
-    cursor: pointer;
-    
-}
+.mainImage,
+.smallImage,
 .lastImage{
     display: block;
-    grid-area: last;
-    border-radius: 15px;
-    object-fit: cover;
-    object-position: left; 
-    max-height: 550px;
     cursor: pointer;
+    object-fit: cover;
+    border-radius: 15px;
+}
+.mainImage,
+.lastImage{
+    max-height: 550px;
+    object-position: left; 
+}
+.mainImage{
+    grid-area: first;
+}
+.smallImage{
+    max-height: 270px;    
+}
+.lastImage{
+    grid-area: last;
 }
 
 /*----------------
@@ -178,19 +188,18 @@ nav a:focus{
     font-size: 2rem;
     color: #ee9b00;
 }
-.Burger-Image{
-    max-width: 500px;
-    max-height: 350px;
+.Burger-Image,
+.Burger-Image-last,
+.Burger-Image-second-last{
+    height: 350px;
     order: -1;
     border-radius: 15px;
     object-fit: cover;
 }
+.Burger-Image-second-last{
+    object-position: 0 -270px;
+}
 .Burger-Image-last{
-    max-width: 500px;
-    max-height: 350px;
-    order: -1;
-    border-radius: 15px;
-    object-fit: cover;
     object-position: 0 -300px;
 }
 .info-align{
@@ -202,50 +211,133 @@ nav a:focus{
     font-size: 2.25rem;
     margin: 0;
 }
-.Burger-Offerts{
+.Burger-Offerts,
+.Burger-Offerts-two{
     text-align: center;
     font-size: 4rem;
     padding-bottom: 1em;
     color: #00b4d8;
     font-family: 'Dancing Script', cursive;
 }
+.Burger-Offerts{
+    margin: 0 0;
+}
+.Burger-Offerts-two{
+    margin: 0.75em 0 0 0;
+}
 .burger-flex{
     display: flex;
     gap: 2rem;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
 }
-.Burger-Button-buy{
-    height: 3rem;
-    font-size: 1.5rem;
-    background-color: #aacc00;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
-    border-radius: 5px;
-    cursor: pointer;
-    border: none;
-    padding: 0 1rem
-}
+
 .burger-buttons-holder{
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-.Burger-Button-add{
+
+.Burger-Button-add,
+.Burger-Button-buy{
     height: 3rem;
     font-size: 1.5rem;
-    background-color: #ee9b00; 
+    cursor: pointer;
+    border: none;
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
     border-radius: 5px;
-    cursor: pointer;
-    border: none;
-    padding: 0 2rem  
-    
+}
+.Burger-Button-buy{
+    background-color: #aacc00;
+    padding: 0 1rem
+}
+
+.Burger-Button-add{
+    background-color: #ee9b00; 
+    padding: 0 2rem   
 }
 .container-burger{
-    width: 90%;
+    width: 98%;
     max-width: 1200px;
     margin: 0 auto;
+}
+
+/*------------
+---------- About Us-------
+---------------*/
+
+#About-Us{
+    width: 100vw;
+    height: 30px;
+    margin: 4em 0;
+    background-color: black;
+}
+.About-Us-title{
+   margin-bottom: 0.50em;
+}
+.images-small-gallery{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2em;
+    justify-content: space-evenly;
+}
+.small-gallery-images{
+    margin: 1em 0;
+    
+    width: 600px;
+    height: 600px;
+    border-radius: 9px;
+    cursor: pointer;
+    object-fit: cover;
+}
+/* Footer*/
+.footer{
+    background-color: #4895ef;
+    color: white;
+    padding: 5em 0;
+    margin-top: 1em;
+    width: 100vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.footer p{
+    margin: 0 20px;
+}
+@media (max-width: 1140px){
+    .burger-info{
+        max-width: 400px;
+    }
+    .Burger-Image,
+    .Burger-Image-last,
+    .Burger-Image-second-last{
+        height: 270px;
+    }
+    .Burger-Image-last{
+        object-position: 0 -250px;
+    }
+    .Burger-Image-second-last{
+        object-position: 0 -225px;
+    }
+   
+}
+@media (max-width: 936px){
+    .burger-info{
+        max-width: 500px;
+    }
+    .Burger-Image,
+    .Burger-Image-last,
+    .Burger-Image-second-last{
+        height: 350px;
+    }
+    .Burger-Image-last{
+        object-position: 0 -270px;
+    }
+    .Burger-Image-second-last{
+        object-position: 0 -300px;
+    }
 }
