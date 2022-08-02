@@ -1,0 +1,252 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Square+Peg&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap');
+
+
+
+
+
+/*----------------
+-------MAIN --------
+------------------*/
+html{
+    scroll-behavior: smooth;
+}
+body{
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    color: #6c757d;
+}
+header{
+    padding: 1rem 0;
+    border-bottom: 2px solid black;
+}
+
+img{
+    max-width: 100%;
+    display: block;
+}
+/*----------------
+-------Typography-------
+------------------*/
+
+
+
+h1{
+    font-size: 1.75rem;
+}
+h2{
+    color: #8d99ae;
+    font-size: 1.5rem;
+}
+.section-paragraph a{
+    text-decoration: none;
+    color: #4895ef;
+    font-weight: 600;
+    transition: all 0.4s ease;
+    margin-left: 10px;
+}
+p{
+    font-size: 1.15rem;
+}
+.section-paragraph a:hover,
+.section-paragraph a:focus{
+    text-decoration: underline;
+    color: #0077b6;
+    font-weight: bolder;
+}
+
+.green{
+    color: green;
+}
+.red{
+    color: rgb(129, 0, 0);
+}
+section h1{
+    font-family: 'Square Peg', cursive;
+    font-size: 4rem;
+    color: #0077b6;
+}
+.menu-h1{
+    text-align: center;
+    font-size: 8rem;
+    margin: 0;
+}
+/*----------------
+-------Navigation-------
+------------------*/
+.container{
+    width: 90%;
+    max-width: 1500px;
+    margin: 0 auto;
+}
+.container-flex{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo{
+    display: flex;
+    align-items: center;
+}
+.logo img{
+    margin-right: 2em;
+    width: 6rem;
+    height: 6rem;
+}
+nav ul{
+    list-style: none;
+    padding: 0;
+    display: flex;
+}
+nav li{
+    margin-right: 2em;
+    font-size: 1.4rem;
+}
+nav a{
+    text-decoration: none;
+    color: #6c757d;
+    font-weight: 500;
+    padding: 1em;
+    transition: all 0.4s ease;
+}
+nav a:hover,
+nav a:focus{
+    text-decoration: underline;
+    color: #4895ef;
+}
+/*----------------
+-------Section one-------
+------------------*/
+.section{
+    text-align: center;
+}
+.section-gallery{
+    display:grid;
+    max-width: 1200px;
+    grid-gap: 10px;
+    grid-template-areas: 'first  . last''first . last';
+    margin: 20px auto;
+    justify-content: center;
+    align-items: center;
+}
+.mainImage{
+    display: block;
+    max-height: 550px;
+     object-fit: cover;
+     object-position: left; 
+    grid-area: first;
+    border-radius: 15px;
+    cursor: pointer;
+    position: relative;
+}
+.smallImage{
+    display: block;
+    object-fit: cover; 
+    border-radius: 15px;
+    max-height: 270px;
+    cursor: pointer;
+    
+}
+.lastImage{
+    display: block;
+    grid-area: last;
+    border-radius: 15px;
+    object-fit: cover;
+    object-position: left; 
+    max-height: 550px;
+    cursor: pointer;
+}
+
+/*----------------
+------- Menu -------
+------------------*/
+
+.burger-info{
+    display: flex;
+    max-width: 500px;
+    flex-direction: column;
+    flex-wrap: wrap;
+    border: 1px solid black;
+    padding: 1em;
+    border-radius: 10px;
+}
+.Burger-Name{
+    margin: 0;
+    font-size: 2rem;
+    color: #ee9b00;
+}
+.Burger-Image{
+    max-width: 500px;
+    max-height: 350px;
+    order: -1;
+    border-radius: 15px;
+    object-fit: cover;
+}
+.Burger-Image-last{
+    max-width: 500px;
+    max-height: 350px;
+    order: -1;
+    border-radius: 15px;
+    object-fit: cover;
+    object-position: 0 -300px;
+}
+.info-align{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.Burger-Class{
+    font-size: 2.25rem;
+    margin: 0;
+}
+.Burger-Offerts{
+    text-align: center;
+    font-size: 4rem;
+    padding-bottom: 1em;
+    color: #00b4d8;
+    font-family: 'Dancing Script', cursive;
+}
+.burger-flex{
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+.Burger-Button-buy{
+    height: 3rem;
+    font-size: 1.5rem;
+    background-color: #aacc00;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    padding: 0 1rem
+}
+.burger-buttons-holder{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.Burger-Button-add{
+    height: 3rem;
+    font-size: 1.5rem;
+    background-color: #ee9b00; 
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    padding: 0 2rem  
+    
+}
+.container-burger{
+
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
